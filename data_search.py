@@ -37,34 +37,39 @@ def main():
         sorted_numbers = sort_numbers(numbers)
         display_numbers(sorted_numbers)
 
-        while True:
-            target = int(input("Enter a number to linear search --> "))
-            if isinstance(target, int):
-                index = linear_search(numbers, target)
-                if index != -1:
-                    print("( linear search ) Number found at index--> ", index)
-                    break
-                else:
-                    print("Number not found.")
-            else:
-                break
+        search_choice = input("Choose search method:\n1. Linear search\n2. Binary search\nEnter your choice: ")
 
-        while True:
-            target = int(input("Enter a number to binary search:--> "))
-            if isinstance(target, int):
-                index = binary_search(sorted_numbers, target)
-                if index != -1:
-                    print("( binary search )Number found at index--> ", index)
+        if search_choice == "1":
+            while True:
+                target = int(input("Enter a number to perform a linear search: "))
+                if isinstance(target, int):
+                    index = linear_search(numbers, target)
+                    if index != -1:
+                        print("(linear search) Number found at index: ", index)
+                    else:
+                        print("Number not found.")
                     break
                 else:
-                    print("Number not found.")
-            else:
-                break
+                    break
+
+        elif search_choice == "2":
+            while True:
+                target = int(input("Enter a number to perform a binary search: "))
+                if isinstance(target, int):
+                    index = binary_search(sorted_numbers, target)
+                    if index != -1:
+                        print("(binary search) Number found at index: ", index)
+                    else:
+                        print("Number not found.")
+                    break
+                else:
+                    break
 
         choice = input("Do you want to continue? (y/n): ")
         if choice.lower() != "y":
             break
         num_inputs = int(input("How many numbers do you want to enter? "))
+
         
 if __name__ == "__main__":
     main()
