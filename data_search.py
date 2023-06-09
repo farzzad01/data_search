@@ -28,5 +28,25 @@ def display_numbers(numbers):
 def main():
     num_inputs = int(input("How many numbers do you want to enter? "))
 
-    
+    while True:
+        numbers = []
+        for _ in range(num_inputs):
+            num = int(input("Enter a number: "))
+            numbers.append(num)
+
+        sorted_numbers = sort_numbers(numbers)
+        display_numbers(sorted_numbers)
+
+        while True:
+            target = int(input("Enter a number to linear search --> "))
+            if isinstance(target, int):
+                index = linear_search(numbers, target)
+                if index != -1:
+                    print("( linear search ) Number found at index--> ", index)
+                    break
+                else:
+                    print("Number not found.")
+            else:
+                break
+
         
