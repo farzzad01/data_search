@@ -49,4 +49,22 @@ def main():
             else:
                 break
 
+        while True:
+            target = int(input("Enter a number to binary search:--> "))
+            if isinstance(target, int):
+                index = binary_search(sorted_numbers, target)
+                if index != -1:
+                    print("( binary search )Number found at index--> ", index)
+                    break
+                else:
+                    print("Number not found.")
+            else:
+                break
+
+        choice = input("Do you want to continue? (y/n): ")
+        if choice.lower() != "y":
+            break
+        num_inputs = int(input("How many numbers do you want to enter? "))
         
+if __name__ == "__main__":
+    main()
