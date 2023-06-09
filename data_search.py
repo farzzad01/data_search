@@ -19,7 +19,14 @@ def binary_search(numbers, target):
 
     return -1
 
+def sort_numbers(numbers):
+    return sorted(numbers)
 
+def display_numbers(numbers):
+    print("Sorted numbers--> ", numbers)
+
+def main():
+    num_inputs = int(input("How many numbers do you want to enter? "))
 
     
         
